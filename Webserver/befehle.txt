@@ -1,0 +1,10 @@
+FROM nginx:alpine
+COPY ./website/ /usr/share/nginx/html/
+EXPOSE 80
+
+Image bauen
+docker build -t mein-nginx .
+
+
+Container starten
+docker run -d -p 8080:80 mein-nginx
